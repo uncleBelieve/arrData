@@ -47,11 +47,13 @@ public class Array {
             throw new IllegalArgumentException("AddLast Fail");
         if(index<0||index>size)
             throw new IllegalArgumentException("dev Fail");
-        for(int i = size-1;i>=index;i--){
+        for(int i = size-1;index<=i;i--)
             data[i+1]=data[i];
-            data[index]=e;
+
+
+        data[index]=e;
             size++;
 
-        }
+
     }
 }
