@@ -30,4 +30,28 @@ public class Array {
     public boolean isEmpty(){
         return size==0;
     }
+
+    //向数组添加元素
+    public void addLast(int e){
+        if(size==data.length)
+            throw new IllegalArgumentException("AddLast Fail");
+        data[size]=e;
+        size++;
+
+        //add(size,e);
+    }
+
+    //向数组指定位置添加
+    public void add(int index,int e){
+        if(size==data.length)
+            throw new IllegalArgumentException("AddLast Fail");
+        if(index<0||index>size)
+            throw new IllegalArgumentException("dev Fail");
+        for(int i = size-1;i>=index;i--){
+            data[i+1]=data[i];
+            data[index]=e;
+            size++;
+
+        }
+    }
 }
