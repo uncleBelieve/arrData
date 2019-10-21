@@ -46,7 +46,7 @@ public class Array {
         if(size==data.length)
             throw new IllegalArgumentException("AddLast Fail");
         if(index<0||index>size)
-            throw new IllegalArgumentException("dev Fail");
+            throw new IllegalArgumentException("index Fail");
         for(int i = size-1;index<=i;i--)
             data[i+1]=data[i];
 
@@ -56,4 +56,38 @@ public class Array {
 
 
     }
+
+    //获取index索引位置的元素
+    int get(int index ){
+        if(index<0||index>size)
+            throw new IllegalArgumentException("index Fail");
+        return data[index];
+    }
+
+    //修改index索引位置的元素
+    void set(int index ,int e){
+        if(index<0||index>size)
+            throw new IllegalArgumentException("index Fail");
+        data[index]=e;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder res  =  new StringBuilder();
+        res.append(String.format("Array:size=%d,capacity=%d\n",size ,data.length));
+        res.append('[');
+        for(int i=0;i<size;i++)
+        {
+            res.append(data[i]);
+            if(i!=size-1)
+                res.append(",");
+        }
+        res.append(']');
+        return res.toString();
+    }
+
+    //查找数组中是否有元素e
+//    public boolean contains(int e){
+//
+//    }
 }
